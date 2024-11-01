@@ -24,6 +24,11 @@ plt.legend()
 
 ![image](https://github.com/user-attachments/assets/ceb41d53-7a56-4d0b-bf07-8da9bc33e572)
 
+# Chi test chart on the sex and survived
+sex_survived = pd.crosstab(titanic_data["Sex"], titanic_data["Survived"], normalize= "columns")
+print(sex_survived)
+c, p, dof, expected = scipy.stats.chi2_contingency(sex_survived)
+print("The P-value is:", p)
 
 
 Age vs. Survival Rate: Analyzing the relationship between a passenger's age and their likelihood of survival can provide insights into whether younger or older passengers had a better chance of surviving. This comparison can help validate historical reports that children were prioritized during evacuation.
